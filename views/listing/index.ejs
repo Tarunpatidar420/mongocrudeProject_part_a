@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h3>all listenigs</h3>
+    <form method="get" action="/listen/new">
+        <button>create-new</button>
+    </form>
+    <ul>
+        <%for(let ele of alldata){%>
+            <li class="title"><a href="/listen/<%=ele._id %>"><%=ele.title %></a></li>
+            <%}%>
+    </ul>
+
+    
+</body>
+</html>

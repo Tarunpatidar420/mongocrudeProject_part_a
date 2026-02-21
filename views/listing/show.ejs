@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+   <h2>show all data</h2>
+   <ul class="showdataByid">
+    <li><b class="heading">Title:</b><%=mydata.title %></li>
+     <li><b  class="heading">description: </b><%=mydata.description %></li>
+      <li><b  class="heading" >Price: </b> &#8377;<%=mydata.price.toLocaleString("en-IN")%></li>
+       <li><b  class="heading">Location:</b><%=mydata.location %></li>
+        <li><b  class="heading">country:</b><%=mydata.country %></li>
+         <li><b  class="heading">Image: </b><%=mydata.image %></li>
+  
+   <a class="editbtn"  href="/listen/<%=mydata._id%>/edit">edit</a>
+   <form method="post" action="/listen/<%=mydata._id %>?_method=DELETE">
+    <button>delete</button>
+   </form>
+    </ul> 
+</body>
+</html>

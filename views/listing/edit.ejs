@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h3>create new route</h3>
+    <form method="post" action="/listen/<%=yourdata._id%>?_method=PUT">
+        <input type="text" name="arr[title]" value="<%=yourdata.title %>">
+        <br>
+        <textarea name="arr[description]" value="<%=yourdata.description %>" rows="8" cols="30"></textarea>
+        <br>
+        <input type="number" name="arr[price]" value="<%=yourdata.price %>">
+        <br>
+        <input type="text" value="<%=yourdata.location %>" name="arr[location]">
+        <br>
+        <input type="text" name="arr[country]" value="<%=yourdata.country %>">
+        <br>
+        <button>submit</button>
+    </form>
+</body>
+</html>
