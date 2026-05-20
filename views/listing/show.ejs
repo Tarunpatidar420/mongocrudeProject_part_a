@@ -1,17 +1,23 @@
 <% layout("layouts/boilerplate")%>
 <body>
-   <h2>show all data</h2>
+   
    <ul class="showdataByid">
+    <h2>    show all data</h2>
+   <li><b class="heading">Image:</b>
+  <img src="<%= mydata.image.url %>"  alt="listing image"width="300px"></li>
+   
     <li><b class="heading">Title:</b><%=mydata.title %></li>
      <li><b  class="heading">description: </b><%=mydata.description %></li>
       <li><b  class="heading" >Price: </b> &#8377;<%=mydata.price.toLocaleString("en-IN")%></li>
        <li><b  class="heading">Location:</b><%=mydata.location %></li>
         <li><b  class="heading">country:</b><%=mydata.country %></li>
-         <li><b  class="heading">Image: </b><%=mydata.image %></li>
-  
-   <a class="editbtn"  href="/listen/<%=mydata._id%>/edit">edit</a>
+ 
+   <a class="editbtn"  href="/listen/<%=mydata._id%>/edit">
+    <button class="btn btn-dark">Edit</button>
+   </a>
+   <br><br>
    <form method="post" action="/listen/<%=mydata._id %>?_method=DELETE">
-    <button>delete</button>
+    <button class="btn btn-dark">delete</button>
    </form>
     </ul> 
 </body>
