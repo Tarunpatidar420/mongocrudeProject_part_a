@@ -13,7 +13,7 @@ main()
     console.log(err)
 })
 async function main() {
-    mongoose.connect("mongodb+srv://tarun:tarun2805@cluster0.qurzrkz.mongodb.net/nodedata?appName=Cluster0")
+    mongoose.connect("mongodb://127.0.0.1:27017/part_a")
     
 }
 const initDb=async()=>{

@@ -1,22 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
+<% layout("layouts/boilerplate")%>
 <body>
     <h3>all listenigs</h3>
-    <form method="get" action="/listen/new">
+    <!-- <form method="get" action="/listen/new">
         <button>create-new</button>
-    </form>
-    <ul>
+    </form> -->
+ <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
+    <%for(let ele of alldata){%>
+        <a href="/listen/<%= ele.id%>"class="listen-link">
+           <div class="card col" style="width: 18rem;">
+  <img src="<%= ele.image.url%>" class="card-img-top" alt="...">
+  <div class="card-img-overlay">abcd</div>
+  
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p><%= ele.title%>
+    <br>
+    Price: &#8377;<%= ele.price.toLocaleString("en-in")%>/night
+   </p>
+
+  </div>
+</div>
+            <%}%>
+ </div>
+ </a>
+
+
+    <!-- <ul>
         <%for(let ele of alldata){%>
             <li class="title"><a href="/listen/<%=ele._id %>"><%=ele.title %></a></li>
             <%}%>
-    </ul>
+    </ul> -->
 
     
 </body>
-</html>

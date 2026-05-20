@@ -12,6 +12,8 @@ app.use(ex.static(path.join(__dirname,"/public/css")))
 app.use(ex.urlencoded({ extended: true }));
 const methodOverride=require("method-override")
 app.use(methodOverride("_method"))
+const ejsMate=require("ejs-mate")
+app.engine("ejs",ejsMate)
 
 
 main()
@@ -22,7 +24,7 @@ main()
     console.log(err)
 })
 async function main() {
-    mongoose.connect("mongodb+srv://tarun:tarun2805@cluster0.qurzrkz.mongodb.net/nodedata?appName=Cluster0")
+    mongoose.connect("mongodb://127.0.0.1:27017/part_a")
     
 }
 // app.get("/testListening",async(req,res)=>{
@@ -87,5 +89,5 @@ app.delete("/listen/:id",async(req,res)=>{
 
 
 app.listen(port,()=>{
-    console.log(`app is listen at ${port}`)
+    console.log(`http://localhost:${port}/listen`)
     })

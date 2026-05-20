@@ -25,3 +25,17 @@ ul.showdataByid{
     background-color: aqua;
     padding: 5px;
 }
+.f-info-links a{
+    text-decoration: none;
+    color:violet;
+}
+.listen-link{
+    text-decoration: none;
+}
+.card-img-overlay{
+    opacity: 0;
+}
+.card-img-overlay:hover{
+    opacity:0.6;
+    background-color: white;
+}
