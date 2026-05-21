@@ -1,25 +1,47 @@
-<% layout("layouts/boilerplate")%>
+
 <body>
+<% layout("layouts/boilerplate")%>
+<div class="row mt-3">
+    <div class="cols-8 offset-2">
+
     <h3>create new route</h3>
-    <form method="post" action="/listen">
-        <label for="title">Title</label>
-        <input type="text" name="arr[title]" placeholder="enter title">
+    <form method="post" action="/listen" novalidate class="needs-validation">
+        <div class="mb-3">
+        <label for="title" >Title</label>
+        <input type="text" name="arr[title]" placeholder="enter title" required class="form-control">
+        <div class="valid-feedback">Title look good</div>
+        </div>
         <br>
+        <div class="mb-3">
         <label for="name">Name</label>
-        <textarea name="arr[description]"  rows="8" cols="30"></textarea>
+        <textarea name="arr[description]"  rows="8" cols="30" required   class="form-control"></textarea>
+        <div class="valid-feedback">description is valid</div>
+        </div>
         <br>
+        <div class="mb-3">
         <label for="price">Price</label>
-        <input type="number" name="arr[price]" placeholder="price">
+        <input name="arr[price]" placeholder="price" required class="form-control">
+       <div class="invalid-feedback">invalid price</div>
+       </div>
         <br>
+        <div class="mb-3">
         <label for="location">Location</label>
-        <input type="text" placeholder="location" name="arr[location]">
+        <input type="text" placeholder="location" name="arr[location]" required class="form-control">
+        <div class="valid-feedback"></div>
+        </div>
         <br>
+        <div class="mb-3">
         <label for="country">Country</label>
-        <input type="text" name="arr[country]" placeholder="country">
+        <input type="text" name="arr[country]" placeholder="country" required class="form-control">
+        </div>
         <br>
+        <div class="mb-3">
         <label for="image">Image</label>
-        <input type="text" name="image" placeholder="image url">
-        <br><br>
+        <input type="text" name="arr[image][url]"  placeholder="image url" class="form-control">
+        </div>
+           <br><br>
         <button class="btn btn-dark">submit</button>
     </form>
+    </div>
+</div>
 </body>

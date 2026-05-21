@@ -1,35 +1,59 @@
-<% layout("layouts/boilerplate")%>
+<% layout("layouts/boilerplate") %>
+
 <body>
-    <h3>all listenigs</h3>
-    <!-- <form method="get" action="/listen/new">
-        <button>create-new</button>
-    </form> -->
- <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1">
-    <%for(let ele of alldata){%>
-        <a href="/listen/<%= ele.id%>"class="listen-link">
-           <div class="card col" style="width: 18rem;">
-  <img src="<%= ele.image.url%>" class="card-img-top" alt="...">
-  <div class="card-img-overlay">abcd</div>
-  
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p><%= ele.title%>
-    <br>
-    Price: &#8377;<%= ele.price.toLocaleString("en-in")%>/night
-   </p>
 
-  </div>
-</div>
-            <%}%>
- </div>
- </a>
+    <h3>All Listings</h3>
 
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 g-4">
 
-    <!-- <ul>
-        <%for(let ele of alldata){%>
-            <li class="title"><a href="/listen/<%=ele._id %>"><%=ele.title %></a></li>
-            <%}%>
-    </ul> -->
+        <% for(let ele of alldata){ %>
 
-    
+            <div class="col">
+
+                <a href="/listen/<%= ele._id %>" class="listen-link text-decoration-none">
+
+                    <div class="card h-100" style="width: 18rem;">
+
+                        <img 
+                            src="<%= ele.image.url %>" 
+                            class="card-img-top" 
+                            alt="listing image"
+                        >
+
+                        <div class="card-body">
+
+                            <h5 class="card-title">
+                                <%= ele.title %>
+                            </h5>
+
+                            <p class="card-text">
+
+                                <%= ele.description %>
+
+                                <br><br>
+
+                                Price :
+                                &#8377;
+                                <%= ele.price.toLocaleString("en-IN") %>
+                                /night
+
+                                <br>
+
+                                <%= ele.location %>,
+                                <%= ele.country %>
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+        <% } %>
+
+    </div>
+
 </body>

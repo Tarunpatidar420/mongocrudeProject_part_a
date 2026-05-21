@@ -1,21 +1,21 @@
 <% layout("layouts/boilerplate")%>
 <body>
     <h3>Edit</h3>
-    <form method="post" action="/listen/<%=yourdata._id%>?_method=PUT">
+    <form method="post" action="/listen/<%=yourdata._id%>?_method=PUT" novalidate class="needs-validation">
         <label for="name">Name</label>
-        <input type="text" name="arr[title]" value="<%=yourdata.title %>">
+        <input type="text" name="arr[title]" value="<%=yourdata.title %>" required class="form-control">
         <br>
     <label for="description">Description</label>
-        <textarea name="arr[description]"  rows="5" cols="40"><%= yourdata.description%></textarea>
+        <textarea name="arr[description]"  rows="5" cols="40"><%= yourdata.description%> required class="form-control"></textarea>
         <br>
         <label for="price">price</label>
-        <input type="number" name="arr[price]" value="<%=yourdata.price %>">
+        <input type="number" name="arr[price]" value="<%=yourdata.price %>" required class="form-control">
         <br>
         <label for="location">Location</label>
-        <input type="text" value="<%=yourdata.location %>" name="arr[location]">
+        <input type="text" value="<%=yourdata.location %>" name="arr[location]" required class="form-control">
         <br>
         <label for="country">Country</label>
-        <input type="text" name="arr[country]" value="<%=yourdata.country %>">
+        <input type="text" name="arr[country]" value="<%=yourdata.country %>" required class="form-control">
         <br>
         <label>Image URL</label>
 
